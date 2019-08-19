@@ -1,0 +1,26 @@
+description: maskrcnn
+
+auth:
+  vc: input
+  cluster: sc2
+  docker:
+    image: igitman/maskrcnn:cuda-10.0
+
+storage:
+  _default:
+    storage_account_name: iggitman
+    container_name: maskrcnn
+    mount_path: /mnt/_default
+
+data:
+  local_dir: data
+  remote_dir: data/maskrcnn
+
+code:
+  local_dir: $CONFIG_DIR/maskrcnn-benchmark
+
+jobs:
+- name: test-run
+  sku: G4
+  command:
+  - python run_philly.py --config_file ./configs/e2e_mask_rcnn_R_50_FPN_1x.yaml

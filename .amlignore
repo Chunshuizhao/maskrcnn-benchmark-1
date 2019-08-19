@@ -1,0 +1,45 @@
+# compilation and distribution
+__pycache__
+_ext
+*.pyc
+*.so
+maskrcnn_benchmark.egg-info/
+build/
+dist/
+
+# pytorch/python/numpy formats
+*.pth
+*.pkl
+*.npy
+
+# ipython/jupyter notebooks
+*.ipynb
+**/.ipynb_checkpoints/
+
+# Editor temporaries
+*.swn
+*.swo
+*.swp
+*~
+
+# Pycharm editor settings
+.idea
+
+# VS code 
+.vscode
+
+# MacOS
+.DS_Store
+
+# project dirs
+# Note the ignore function in AzureML does not work properly. 
+# If we specify to ignore datasets/, it will also ignore the 
+# maskrcnn_benchmark/data/datasets/ folder and it will cause 
+# problem. As a workaround, I renamed my local dataset path
+# as datasets1/. I have submitted this issue to the AML team.
+datasets1
+models
+output
+backup
+pretrained_model
+scripts
